@@ -46,6 +46,8 @@ public class PlayfabManager : MonoBehaviourPunCallbacks
 
     private IEnumerator ConnectRoutine()
     {
+        Singleton.Instance.Call();
+
         PhotonNetwork.ConnectUsingSettings();
 
         while(PhotonNetwork.IsConnectedAndReady == false)
