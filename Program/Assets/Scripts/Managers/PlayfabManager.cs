@@ -46,8 +46,6 @@ public class PlayfabManager : MonoBehaviourPunCallbacks
 
     private IEnumerator ConnectRoutine()
     {
-        Singleton.Instance.Call();
-
         PhotonNetwork.ConnectUsingSettings();
 
         while(PhotonNetwork.IsConnectedAndReady == false)
@@ -56,8 +54,6 @@ public class PlayfabManager : MonoBehaviourPunCallbacks
         }
 
         PhotonNetwork.JoinLobby();
-
-        Debug.Log("Connected to Photon");
     }
 
     public override void OnJoinedLobby()
