@@ -1,9 +1,14 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class PanelManager : Singleton<PanelManager>
 {
-   public void Open(string Message)
+    [SerializeField] GameObject clone = null;
+
+    Dictionary<Panel, GameObject> dictionary = new Dictionary<Panel, GameObject>();
+
+   public void Open(string message)
     {
-        Debug.Log(Message);
+        Debug.Log(message);
     }
 }

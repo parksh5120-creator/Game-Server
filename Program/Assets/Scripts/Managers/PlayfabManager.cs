@@ -31,7 +31,12 @@ public class PlayfabManager : MonoBehaviourPunCallbacks
 
         PhotonNetwork.GameVersion = version;
 
-        StartCoroutine(ConnectRoutine());
+        PhotonNetwork.ConnectUsingSettings();
+    }
+
+    public override void OnConnectedToMaster()
+    {
+        PhotonNetwork.JoinLobby();
     }
 
     public void Success(GetAccountInfoResult getAccountInfoResult)
@@ -42,18 +47,6 @@ public class PlayfabManager : MonoBehaviourPunCallbacks
     public void Failed(PlayFabError playFabError)
     {
         Debug.Log(playFabError.GenerateErrorReport());
-    }
-
-    private IEnumerator ConnectRoutine()
-    {
-        PhotonNetwork.ConnectUsingSettings();
-
-        while(PhotonNetwork.IsConnectedAndReady == false)
-        {
-            yield return null;
-        }
-
-        PhotonNetwork.JoinLobby();
     }
 
     public override void OnJoinedLobby()
