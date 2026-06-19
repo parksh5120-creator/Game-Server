@@ -34,6 +34,11 @@ public class PlayfabManager : MonoBehaviourPunCallbacks
         PhotonNetwork.ConnectUsingSettings();
     }
 
+    public void Open()
+    {
+        PanelManager.Instance.Open(Panel.Subscribe);
+    }
+
     public override void OnConnectedToMaster()
     {
         PhotonNetwork.JoinLobby();
