@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6999803039919223377}
   - component: {fileID: 5786744876791097202}
   m_Layer: 5
-  m_Name: Maximum Players
+  m_Name: Room Personnel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ( 1 / 12 )
+  m_text: ( 1 / 4 )
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b633915a7eab00342a258e5c2f50a75f, type: 2}
   m_sharedMaterial: {fileID: -5571592025542048100, guid: b633915a7eab00342a258e5c2f50a75f, type: 2}
@@ -286,6 +286,7 @@ GameObject:
   - component: {fileID: 6475778090766385476}
   - component: {fileID: 9132934969798337892}
   - component: {fileID: 6507602740790998362}
+  - component: {fileID: 6284855575965603053}
   m_Layer: 5
   m_Name: Room Button
   m_TagString: Untagged
@@ -305,8 +306,8 @@ RectTransform:
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 476482344328308166}
   - {fileID: 7575430571346843997}
+  - {fileID: 476482344328308166}
   - {fileID: 4542574815392032208}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -397,6 +398,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6284855575965603053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5571323673172818833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e327a6a42ebea4595e405d7f2f1a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomStatus
+  roomNameText: {fileID: 3313571696271595189}
+  roomIndexText: {fileID: 3505490606073136101}
+  roomPersonnelText: {fileID: 5786744876791097202}
 --- !u!1 &7127621355449546469
 GameObject:
   m_ObjectHideFlags: 0

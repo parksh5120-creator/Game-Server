@@ -35,7 +35,7 @@ public class RoomPanel : MonoBehaviourPunCallbacks
 
     public void OnRoomNameChanged()
     {
-        createRoomButton.interactable = !string.IsNullOrWhiteSpace(roomNameInputField.text) == false;
+        createRoomButton.interactable = string.IsNullOrWhiteSpace(roomNameInputField.text) == false;
     }
 
     public void Select()
@@ -45,7 +45,7 @@ public class RoomPanel : MonoBehaviourPunCallbacks
             if (toggles[i].isOn)
             {
                 personnel = i + 2;
-                Debug.Log($"인원 수 = {personnel}");
+                
                 break;
             }
         }
