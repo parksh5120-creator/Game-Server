@@ -331,6 +331,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6705040956266774092}
   - {fileID: 5720047244983103847}
   - {fileID: 5204744616729508844}
   - {fileID: 5841063489308381720}
@@ -739,7 +740,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3942611304966279141}
   toggleTransition: 1
   graphic: {fileID: 3329547543706256103}
-  m_Group: {fileID: 0}
+  m_Group: {fileID: 8146031112113165597}
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -836,7 +837,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5809761048128052473}
   toggleTransition: 1
   graphic: {fileID: 7963131088242895727}
-  m_Group: {fileID: 0}
+  m_Group: {fileID: 8146031112113165597}
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1722,6 +1723,51 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &5991491776955020602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6705040956266774092}
+  - component: {fileID: 8146031112113165597}
+  m_Layer: 0
+  m_Name: Toggle Group
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6705040956266774092
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5991491776955020602}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8146942564076009913}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8146031112113165597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5991491776955020602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ToggleGroup
+  m_AllowSwitchOff: 0
 --- !u!1 &6993865087788560758
 GameObject:
   m_ObjectHideFlags: 0
@@ -2344,7 +2390,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5113857690781994693}
   toggleTransition: 1
   graphic: {fileID: 5814302308055586321}
-  m_Group: {fileID: 0}
+  m_Group: {fileID: 8146031112113165597}
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
