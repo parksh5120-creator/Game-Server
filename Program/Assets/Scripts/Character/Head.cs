@@ -16,6 +16,6 @@ public class Head : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
-        
+        rotation.RotateX(minimumAngle, maximumAngle);
     }
 }

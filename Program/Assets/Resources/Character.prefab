@@ -612,7 +612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Character
   speed: 5
   direction: {x: 0, y: 0, z: 0}
-  rotation: {fileID: 0}
+  rotation: {fileID: 5913541852675504110}
   rigidBody: {fileID: 0}
 --- !u!54 &2437556408465133406
 Rigidbody:
@@ -709,9 +709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Rotation
   axis: 0
-  speed: 100
-  mouseX: 0
-  mouseY: 0
+  speed: 10
 --- !u!1 &4623372723970940283
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,6 +723,7 @@ GameObject:
   - component: {fileID: 6347309994176766527}
   - component: {fileID: 1513970555412491234}
   - component: {fileID: 1606145001242476267}
+  - component: {fileID: 6809814484148267589}
   m_Layer: 0
   m_Name: eyes
   m_TagString: Untagged
@@ -863,9 +862,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Rotation
   axis: 0
-  speed: 100
-  mouseX: 0
-  mouseY: 0
+  speed: 300
+--- !u!114 &6809814484148267589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4623372723970940283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9f3fc8075303f444ba90bcc5542e901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Head
+  rotation: {fileID: 0}
+  minimumAngle: -55
+  maximumAngle: 55
 --- !u!1 &4963312142105013875
 GameObject:
   m_ObjectHideFlags: 0
