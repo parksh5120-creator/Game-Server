@@ -709,7 +709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Rotation
   axis: 0
-  speed: 10
+  speed: 100
 --- !u!1 &4623372723970940283
 GameObject:
   m_ObjectHideFlags: 0

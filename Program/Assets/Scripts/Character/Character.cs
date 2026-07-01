@@ -7,10 +7,13 @@ public class Character : MonoBehaviourPun
     [SerializeField] Vector3 direction;
     [SerializeField] Rotation rotation;
     [SerializeField] Rigidbody rigidBody;
+    [SerializeField] Animator animator;
 
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
+        rotation = GetComponent<Rotation>();
+        animator = GetComponent<Animator>();
     }
     private void Start()
     {
@@ -34,17 +37,22 @@ public class Character : MonoBehaviourPun
         }
         
     }
-    void Control()
+    private void Control()
     {
         direction.x = Input.GetAxisRaw("Horizontal");
         direction.z = Input.GetAxisRaw("Vertical");
 
+        if(direction.x > 0 || direction.z > 0)
+        {
+          //  animator.SetInteger()
+        }
+
         direction.Normalize();
     }
 
-    void Move()
+    private void Move()
     {
-        rigidBody.MovePosition(transform.position + rigidBody.transform.TransformDirection(direction) * speed * Time.fixedDeltaTime);
+        rigidBody.MovePosition(rigidBody.position + rigidBody.transform.TransformDirection(direction) * speed * Time.fixedDeltaTime);
     }
     private void DisableCamera()
     {
