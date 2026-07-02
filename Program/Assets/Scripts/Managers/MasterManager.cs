@@ -13,7 +13,7 @@ public class MasterManager : MonoBehaviourPunCallbacks
         {
             while (true)
             {
-                GameObject clone = PhotonNetwork.Instantiate("Character", Vector3.zero, Quaternion.identity);
+                GameObject clone = PhotonNetwork.Instantiate("Robot", Vector3.zero, Quaternion.identity);
 
                 clone.transform.position = createTransform.position;
 

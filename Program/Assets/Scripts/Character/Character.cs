@@ -25,6 +25,8 @@ public class Character : MonoBehaviourPun
         if (photonView.IsMine)
         {
             Control();
+
+            Animate();
         }
     }
     private void FixedUpdate()
@@ -37,20 +39,26 @@ public class Character : MonoBehaviourPun
         }
         
     }
-    private void Control()
+    void Control()
     {
         direction.x = Input.GetAxisRaw("Horizontal");
         direction.z = Input.GetAxisRaw("Vertical");
 
-        if(direction.x > 0 || direction.z > 0)
-        {
-          //  animator.SetInteger()
-        }
-
         direction.Normalize();
     }
 
-    private void Move()
+    void Animate()
+    {
+      
+        
+        animator.SetInteger("X", Mathf.Abs((int)direction.x));
+        animator.SetInteger("Y", Mathf.Abs((int)direction.z));
+        
+
+        
+    }
+
+    void Move()
     {
         rigidBody.MovePosition(rigidBody.position + rigidBody.transform.TransformDirection(direction) * speed * Time.fixedDeltaTime);
     }
