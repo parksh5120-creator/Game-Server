@@ -39,6 +39,16 @@ public class Character : MonoBehaviourPun
         }
         
     }
+
+    void Pause()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            MouseManager.Instance.SetMouse(true);
+
+            PanelManager.Instance.Open(Panel.Pause);
+        }
+    }
     void Control()
     {
         direction.x = Input.GetAxisRaw("Horizontal");
