@@ -14,10 +14,15 @@ public class RoomPanel : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        Select();
-
         OnRoomNameChanged();
     }
+    public override void OnEnable()
+    {
+        base.OnEnable();
+
+        Select();
+    }
+
     public void CreateRoom()
     {
         RoomOptions roomOptions = new RoomOptions();
@@ -29,6 +34,10 @@ public class RoomPanel : MonoBehaviourPunCallbacks
         roomOptions.IsVisible = true;
 
         PhotonNetwork.CreateRoom(roomNameInputField.text, roomOptions);
+
+        personnel = 2;
+
+        roomNameInputField.text = "";
 
         gameObject.SetActive(false);
     }

@@ -27,6 +27,8 @@ public class Character : MonoBehaviourPun
             Control();
 
             Animate();
+
+            Pause();
         }
     }
     private void FixedUpdate()
@@ -70,7 +72,7 @@ public class Character : MonoBehaviourPun
 
     void Move()
     {
-        rigidBody.MovePosition(rigidBody.position + rigidBody.transform.TransformDirection(direction) * speed * Time.fixedDeltaTime);
+        rigidBody.linearVelocity = rigidBody.transform.TransformDirection(direction).normalized * speed;
     }
     private void DisableCamera()
     {
@@ -85,6 +87,13 @@ public class Character : MonoBehaviourPun
             eyes.GetComponent<AudioListener>().gameObject.SetActive(false);
 
             eyes.gameObject.SetActive(false);
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Robot"))
+        {
+            PhotonNetwork.Destroy(other.gameObject);
         }
     }
 }
