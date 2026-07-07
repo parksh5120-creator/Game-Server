@@ -1,9 +1,11 @@
 using UnityEngine;
 using Photon.Pun;
 
-public class Character : MonoBehaviourPun
+public class Character : MonoBehaviourPun, IPunObservable
 {
     [SerializeField] float speed;
+    [SerializeField] float health = 100;
+
     [SerializeField] Vector3 direction;
     [SerializeField] Rotation rotation;
     [SerializeField] Rigidbody rigidBody;
@@ -53,6 +55,8 @@ public class Character : MonoBehaviourPun
     }
     void Control()
     {
+        rotation.MouseX = Input.GetAxisRaw("Mouse X");
+
         direction.x = Input.GetAxisRaw("Horizontal");
         direction.z = Input.GetAxisRaw("Vertical");
 
@@ -93,7 +97,31 @@ public class Character : MonoBehaviourPun
     {
         if(other.CompareTag("Robot"))
         {
-            PhotonNetwork.Destroy(other.gameObject);
+            PhotonView view = other.GetComponent<PhotonView>();
+
+            if (view != null)
+            {
+                Debug.Log("Robot Object does not have a PhotonView");
+            }
+
+            if (view.IsMine || PhotonNetwork.IsMasterClient)
+            {
+                PhotonNetwork.Destroy(other.gameObject);
+            }
+
         }
     }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(health);
+        }
+        else
+        {
+            health = (float)stream.ReceiveNext();
+        }
+    }
+
 }

@@ -7,7 +7,6 @@ public class Head : MonoBehaviourPunCallbacks
 
     [SerializeField] float minimumAngle = -55f;
     [SerializeField] float maximumAngle = 55f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
         rotation = GetComponent<Rotation>();
@@ -16,6 +15,8 @@ public class Head : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
+        rotation.MouseY = Input.GetAxisRaw("Mouse Y");
+
         rotation.RotateX(minimumAngle, maximumAngle);
     }
 }
